@@ -1,0 +1,49 @@
+#skin {
+	list-style: none;
+	padding: 0px;
+	left: 20px;
+}
+
+#skin li {
+	position: relative;
+	display: inline-block;
+	border: 1px solid;
+	width: 15px;
+	height: 15px;
+	margin: 5px;
+	margin-top: 25px;
+}
+
+#skin_0 {
+	border-color: #284895;
+	background-color: #284895;
+}
+
+#skin_1 {
+	border-color: rgb(0,40,80);
+	background-color: rgb(0,40,80);
+}
+
+#skin_2 {
+	border-color: rgb(0, 21, 41);
+	background-color: rgb(0, 21, 41);
+}
+
+#skin_3 {
+	border-color: skyblue;
+	background-color: skyblue;
+}
+
+#skin_4 {
+	border-color: darkorange;
+	background-color: darkorange;
+}
+
+#skin_5 {
+	border-color: lawngreen;
+	background-color: lawngreen;
+}
+
+.selected {
+	top: -5px;
+}

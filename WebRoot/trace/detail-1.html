@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+<title></title>
+<meta charset="utf-8">
+<link rel="stylesheet" type="text/css"
+	href="../base/layui/css/layui.css">
+<script type="text/javascript" src="../base/jquery-3.2.1.min.js"></script>
+</head>
+<style type="text/css">
+* {
+	/* padding: 0; */
+}
+
+.container {
+	background: #fff;
+	height: 550px;
+	padding-top: 10px;
+}
+.content{
+	width: 500px;
+	float: left;
+}
+#big {
+	width: 360px;
+	height: 360px;
+	background: url(../img/01.jpg) top center;
+	border: 1px solid #ddd;
+	margin-left: 100px;
+	margin-top: 20px;
+}
+
+.box {
+	width: 360px;
+	height: 70px;
+	margin-left: 100px;
+	margin-top: 30px;
+}
+
+ul {
+	list-style: none;
+	display: flex;
+}
+
+li {
+	float: left;
+	/* border: 1px solid gray; */
+	margin-right: 5px;
+	line-height: 75px;
+	font-size: 25px;
+	color: #aaa;
+}
+
+ul img {
+	cursor: pointer;
+	height: 75px;
+	width: 75px;
+}
+
+ul img:HOVER {
+	border: solid 1px red;
+}
+</style>
+<body>
+	<div class="container">
+		<div class="content">
+			<div id="big"></div>
+			<div class="box">
+				<ul class="box01">
+					<li><</li>
+					<li><img src="../img/01.jpg" alt="连接失败" id="pic"></li>
+					<li><img src="../img/02.jpg" alt="连接失败" id="pic1"></li>
+					<li><img src="../img/03.jpg" alt="连接失败" id="pic2"></li>
+					<li><img src="../img/04.jpg" alt="连接失败" id="pic3"></li>
+					<li>></li>
+				</ul>
+			</div>
+		</div>
+		<div class="right">
+			<p>干红葡萄酒   中国怀来   750ml/瓶 *6瓶</p>
+			<div>
+				<p>价 格：<span>¥2000.00</span><span>[原 价：¥2288.00]</span><a>降价通知</a> </p>
+				<p>促 销：<span>满 减</span><span>满999元减50元  详情>></span></p>
+			</div>
+		</div>
+	</div>
+
+	<script type="text/javascript">
+  	window.onload = function(){
+        var imgbig = document.getElementById("big");
+    	var pic = document.getElementById("pic");
+        var pic1 = document.getElementById("pic1");
+        var pic2 = document.getElementById("pic2");
+        var pic3 = document.getElementById("pic3");
+        var pic4 = document.getElementById("pic4");
+        pic.onmouseover = function(){
+            imgbig.style.backgroundImage = "url(../img/01.jpg)"
+        }
+         pic1.onmouseover = function(){
+            imgbig.style.backgroundImage = "url(../img/02.jpg)"
+        }
+         pic2.onmouseover = function(){
+            imgbig.style.backgroundImage = "url(../img/03.jpg)"
+        }
+         pic3.onmouseover = function(){
+            imgbig.style.backgroundImage = "url(../img/04.jpg)"
+        }
+       }
+          
+         
+   
+</script>
+</body>
+</html>

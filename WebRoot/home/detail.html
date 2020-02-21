@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+<title></title>
+<meta charset="utf-8">
+<link rel="stylesheet" type="text/css" href="../css/DRMvideo2.css">
+</head>
+<style type="text/css">
+	* {
+		margin: 0;
+		padding: 0;
+	}
+	
+	#big {
+		width: 360px;
+		height: 360px;
+		background: url(../img/01.jpg) top center;
+		border: 1px solid gray;
+		margin-left: 300px;
+		margin-top: 50px;
+	}
+	
+	.box{
+		width: 360px;
+		height: 70px;
+		margin-left: 300px;
+	}
+	.box01{
+		
+	}
+	ul {
+		list-style: none;
+	}
+	
+	li {
+		float: left;
+		border: 1px solid gray;
+	}
+	
+	ul img {
+		cursor: pointer;
+	}
+</style>
+<body>
+	<div id="big"></div>
+	<div class="box">
+		<ul class="box01">
+			<li><img src="../img/01.jpg" alt="连接失败" id="pic"></li>
+			<li><img src="../img/02.jpg" alt="连接失败" id="pic1"></li>
+			<li><img src="../img/03.jpg" alt="连接失败" id="pic2"></li>
+			<li><img src="../img/04.jpg" alt="连接失败" id="pic3"></li>
+		</ul>
+	</div>
+
+	<script type="text/javascript">
+  	window.onload = function(){
+        var imgbig = document.getElementById("big");
+    	var pic = document.getElementById("pic");
+        var pic1 = document.getElementById("pic1");
+        var pic2 = document.getElementById("pic2");
+        var pic3 = document.getElementById("pic3");
+        var pic4 = document.getElementById("pic4");
+        pic.onmouseover = function(){
+            imgbig.style.backgroundImage = "url(../img/01.jpg)"
+        }
+         pic1.onmouseover = function(){
+            imgbig.style.backgroundImage = "url(../img/02.jpg)"
+        }
+         pic2.onmouseover = function(){
+            imgbig.style.backgroundImage = "url(../img/03.jpg)"
+        }
+         pic3.onmouseover = function(){
+            imgbig.style.backgroundImage = "url(../img/04.jpg)"
+        }
+       }
+          
+         
+   
+</script>
+</body>
+</html>

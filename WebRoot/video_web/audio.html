@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>音频展示</title>
+    <meta charset="utf-8">
+    <link rel="stylesheet" type="text/css" href="../base/css/layui.css">
+    <link rel="stylesheet" type="text/css" href="../css/audio.css">
+    <script type="text/javascript" src="../base/jquery-3.2.1.min.js"></script>
+    <script type="text/javascript" src="../base/layui.js"></script>
+    <script type="text/javascript" src="../js/audio_list.js"></script>
+</head>
+
+<body>
+    <div id="header">
+        <p>音频列表</p>
+    </div>
+    <div class="layui-container">
+        <div class="headTitle">
+            <span class="span1">[分类]</span> <span class="span2">特色音频</span>
+        </div>
+        <div class="layui-row first_row">
+         <!--    <div class="layui-col-md3">
+                <div class="photo">
+                    <audio controls="controls" src="../audio/shanghaitan.mp3" controlsList="nodownload"></audio>
+                    <div class="title1">
+                        <span class="span1">标题：</span>
+                        <span>上海滩</span>
+                        <br>
+                        <span class="span1">音频格式：</span>
+                        <span>MP3</span>
+                    </div>
+                </div>
+            </div>
+            <div class="layui-col-md3">
+                <div class="photo">
+                    <audio controls="controls" src="../audio/haikuotiankong.mp3" controlsList="nodownload"></audio>
+                    <div class="title1">
+                        <span class="span1">标题：</span>
+                        <span>海阔天空</span>
+                        <br>
+                        <span class="span1">音频格式：</span>
+                        <span>WAV</span>
+                    </div>
+                </div>
+            </div>
+            <div class="layui-col-md3">
+                <div class="photo">
+                    <audio controls="controls" src="../audio/jingzhongbaoguo.mp3" controlsList="nodownload"></audio>
+                    <div class="title1">
+                        <span class="span1">标题：</span>
+                        <span>精忠报国</span>
+                        <br>
+                        <span class="span1">音频格式：</span>
+                        <span>WMA</span>
+                    </div>
+                </div>
+            </div>
+            <div class="layui-col-md3">
+                <div class="photo">
+                   <audio controls="controls" src="../audio/aipincaihuiying.mp3" controlsList="nodownload"></audio>
+                    <div class="title1">
+                        <span class="span1">标题：</span>
+                        <span>爱拼才会赢</span>
+                        <br>
+                        <span class="span1">音频格式：</span>
+                        <span>AAC</span>
+                    </div>
+                </div>
+            </div> -->
+        </div>
+       <!--  <div class="layui-row row">
+            <div class="layui-col-md3">
+                <div class="photo">
+                    <audio controls="controls" src="../audio/zaihuishou.mp3" controlsList="nodownload"></audio>
+                    <div class="title1">
+                        <span class="span1">标题：</span>
+                        <span>再回首</span>
+                        <br>
+                        <span class="span1">音频格式：</span>
+                        <span>Wav</span>
+                    </div>
+                </div>
+            </div>
+            <div class="layui-col-md3">
+                <div class="photo">
+                    <audio controls="controls" src="../audio/zhunipingan.mp3" controlsList="nodownload"></audio>
+                    <div class="title1">
+                        <span class="span1">标题：</span>
+                        <span>祝你平安</span>
+                        <br>
+                        <span class="span1">音频格式：</span>
+                        <span>MP3</span>
+                    </div>
+                </div>
+            </div>
+            <div class="layui-col-md3">
+                <div class="photo">
+                    <audio controls="controls" src="../audio/yilushangyouni.mp3" controlsList="nodownload"></audio>
+                    <div class="title1">
+                        <span class="span1">标题：</span>
+                        <span>一路上有你</span>
+                        <br>
+                        <span class="span1">音频格式：</span>
+                        <span>WMA</span>
+                    </div>
+                </div>
+            </div>
+            <div class="layui-col-md3">
+                <div class="photo">
+                    <audio controls="controls" src="../audio/wodezhongguoxin.mp3" controlsList="nodownload"></audio>
+                    <div class="title1">
+                        <span class="span1">标题：</span>
+                        <span>我的中国心</span>
+                        <br>
+                        <span class="span1">音频格式：</span>
+                        <span>MP3</span>
+                    </div>
+                </div>
+            </div>
+        </div> -->
+      <!--   <div class="layui-row row">
+            <div class="layui-col-md3">
+                <div class="photo">
+                    <audio controls="controls" src="../audio/dahai.mp3" controlsList="nodownload"></audio>
+                    <div class="title1">
+                        <span class="span1">标题：</span>
+                        <span>大海</span>
+                        <br>
+                        <span class="span1">音频格式：</span>
+                        <span>WAV</span>
+                    </div>
+                </div>
+            </div>
+            <div class="layui-col-md3">
+                <div class="photo">
+                    <audio controls="controls" src="../audio/hongri.mp3" controlsList="nodownload"></audio>
+                    <div class="title1">
+                        <span class="span1">标题：</span>
+                        <span>红日</span>
+                        <br>
+                        <span class="span1">音频格式：</span>
+                        <span>MP3</span>
+                    </div>
+                </div>
+            </div>
+            <div class="layui-col-md3">
+                <div class="photo">
+                    <audio controls="controls" src="../audio/tongzhuodeni.mp3" controlsList="nodownload"></audio>
+                    <div class="title1">
+                        <span class="span1">标题：</span>
+                        <span>同桌的你</span>
+                        <br>
+                        <span class="span1">音频格式：</span>
+                        <span>AAC</span>
+                    </div>
+                </div>
+            </div>
+            <div class="layui-col-md3">
+                <div class="photo">
+                    <audio controls="controls" src="../audio/guanghuisuiyue.mp3" controlsList="nodownload"></audio>
+                    <div class="title1">
+                        <span class="span1">标题：</span>
+                        <span>光辉岁月</span>
+                        <br>
+                        <span class="span1">音频格式：</span>
+                        <span>MP3</span>
+                    </div>
+                </div>
+            </div>
+        </div> -->
+    </div>
+</body>
+
+</html>

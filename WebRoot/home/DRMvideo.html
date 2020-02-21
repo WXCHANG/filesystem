@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>视频展示</title>
+    <meta charset="utf-8">
+    <link rel="stylesheet" type="text/css" href="../base/layui/css/layui.css">
+    <link rel="stylesheet" type="text/css" href="../css/DRMvideo.css">
+    <script type="text/javascript" src="../base/layui/layui.js"></script>
+    <script type="text/javascript" src="../base/jquery-3.2.1.min.js"></script>
+    <script type="text/javascript" src="../js/DRMvideo.js"></script>
+</head>
+
+<body>
+    <div id="header">
+        <p>视频列表</p>
+    </div>
+    <div class="layui-container">
+        <div class="headTitle">
+            <span class="span1">[分类]</span> <span class="span2">专题视频</span>
+        </div>
+        <div class="layui-row">
+         <!--    <div class="layui-col-md3">
+                <div class="photo">
+                    <a href="videoShow.html" target="_blank"><img src="../images/videoPhoto3.jpg"></a>
+                    <div class="title">
+                        <span class="span1">标题：</span>
+                        <span>专题视频</span>
+                        <br>
+                        <span class="span1">视频格式：</span>
+                        <span>MP4</span>
+                    </div>
+                </div>
+            </div>
+            <div class="layui-col-md3">
+                <div class="photo">
+                    <a href="videoShow.html" target="_blank">
+                        <video src="../video/fe291fe24e172.mp4"></video>
+                    </a>
+
+                    <div class="title">
+                        <span class="span1">标题：</span>
+                        <span>专题视频</span>
+                        <br>
+                        <span class="span1">视频格式：</span>
+                        <span>FLV</span>
+                    </div>
+                </div>
+            </div>
+            <div class="layui-col-md3">
+                <div class="photo">
+                    <a href="videoShow.html" target="_blank"><img src="../images/videoPhoto2.jpg"></a>
+                    <div class="title">
+                        <span class="span1">标题：</span>
+                        <span>专题视频</span>
+                        <br>
+                        <span class="span1">视频格式：</span>
+                        <span>AVI</span>
+                    </div>
+                </div>
+            </div>
+            <div class="layui-col-md3">
+                <div class="photo">
+                    <a  href="videoShow.html" target="_blank"><img src="../images/videoPhoto4.jpg"></a>
+                    <div class="title">
+                        <span class="span1">标题：</span>
+                        <span>专题视频</span>
+                        <br>
+                        <span class="span1">视频格式：</span>
+                        <span>MP4</span>
+                    </div>
+                </div>
+            </div> -->
+        </div>
+     <!--    <div class="layui-row row">
+            <div class="layui-col-md3">
+                <div class="photo">
+                    <a href="videoShow.html" target="_blank"><img src="../images/videoPhoto4.jpg"></a>
+                    <div class="title">
+                        <span class="span1">标题：</span>
+                        <span>专题视频</span>
+                        <br>
+                        <span class="span1">视频格式：</span>
+                        <span>RM</span>
+                    </div>
+                </div>
+            </div>
+            <div class="layui-col-md3">
+                <div class="photo">
+                    <a  href="videoShow.html" target="_blank"><img src="../images/videoPhoto2.jpg"></a>
+                    <div class="title">
+                        <span class="span1">标题：</span>
+                        <span>专题视频</span>
+                        <br>
+                        <span class="span1">视频格式：</span>
+                        <span>MPEG2</span>
+                    </div>
+                </div>
+            </div>
+            <div class="layui-col-md3">
+                <div class="photo">
+                    <a  href="videoShow.html" target="_blank"><img src="../images/videoPhoto1.jpg"></a>
+                    <div class="title">
+                        <span class="span1">标题：</span>
+                        <span>专题视频</span>
+                        <br>
+                        <span class="span1">视频格式：</span>
+                        <span>H.264</span>
+                    </div>
+                </div>
+            </div>
+            <div class="layui-col-md3">
+                <div class="photo">
+                    <a  href="videoShow.html" target="_blank"><img src="../images/videoPhoto3.jpg"></a>
+                    <div class="title">
+                        <span class="span1">标题：</span>
+                        <span>专题视频</span>
+                        <br>
+                        <span class="span1">视频格式：</span>
+                        <span>MP4</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="layui-row row">
+            <div class="layui-col-md3">
+                <div class="photo">
+                    <a href="videoShow.html" target="_blank"><img src="../images/videoPhoto3.jpg"></a>
+                    <div class="title">
+                        <span class="span1">标题：</span>
+                        <span>专题视频</span>
+                        <br>
+                        <span class="span1">视频格式：</span>
+                        <span>FLV</span>
+                    </div>
+                </div>
+            </div>
+            <div class="layui-col-md3">
+                <div class="photo">
+                    <a href="videoShow.html" target="_blank"><img src="../images/videoPhoto2.jpg"></a>
+                    <div class="title">
+                        <span class="span1">标题：</span>
+                        <span>专题视频</span>
+                        <br>
+                        <span class="span1">视频格式：</span>
+                        <span>RM</span>
+                    </div>
+                </div>
+            </div>
+            <div class="layui-col-md3">
+                <div class="photo">
+                    <a href="videoShow.html" target="_blank"><img src="../images/videoPhoto1.jpg"></a>
+                    <div class="title">
+                        <span class="span1">标题：</span>
+                        <span>专题视频</span>
+                        <br>
+                        <span class="span1">视频格式：</span>
+                        <span>MP4</span>
+                    </div>
+                </div>
+            </div>
+            <div class="layui-col-md3">
+                <div class="photo">
+                    <a href="videoShow.html" target="_blank"><img src="../images/videoPhoto2.jpg"></a>
+                    <div class="title">
+                        <span class="span1">标题：</span>
+                        <span>专题视频</span>
+                        <br>
+                        <span class="span1">视频格式：</span>
+                        <span>MP4</span>
+                    </div>
+                </div>
+            </div>
+        </div> -->
+    </div>
+
+<!--     <script type="text/javascript">
+    var time= 0;
+    $('a').on("click", function() {
+        time++;
+        localStorage.setItem("times",time);
+    })
+
+    </script> -->
+</body>
+
+</html>

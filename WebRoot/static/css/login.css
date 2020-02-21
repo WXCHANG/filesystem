@@ -1,0 +1,46 @@
+@CHARSET "UTF-8";
+body{
+   background: url('../../static/images/bg.jpg') no-repeat left top;
+   background-size:100%;
+}
+.login {
+    padding-top: 10%;
+    width: 26%;
+}
+
+
+.content_header h1{
+	font-size: 22px;
+    text-align: center;
+    padding: 35px 0px;
+    float: left;
+}
+
+.content_header img{
+	width: 100%;
+	padding-bottom: 30px;
+}
+
+.content{
+	width: 89%;
+	background: #fff;
+	margin: 0px auto;
+	border-radius: 4px;
+}
+
+.btn-center{
+    text-center:center;
+    margin:0 auto;
+}
+
+.content > h1{
+	color: #a4a3a3;
+    text-align: center;
+    padding: 10px;
+}
+.content > img{
+	height:80px;
+	width:80px;
+	margin-top: -115px;
+    padding-left: 35px;
+}

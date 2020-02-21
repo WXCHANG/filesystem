@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>视频展示</title>
+    <meta charset="utf-8">
+    <link rel="stylesheet" type="text/css" href="../css/videoShow.css">
+    <link rel="stylesheet" type="text/css" href="../base/css/layui.css">
+    <script type="text/javascript" src="../base/jquery-3.2.1.min.js"></script>
+    <script type="text/javascript" src="../js/videoShow_en.js"></script>
+    <style type="text/css">
+        .videoimg{
+            width: 800px;
+            height: 400px;
+            position: absolute;
+            top:50px;
+            left:185px;
+            border: 1px solid #333;
+        }
+        .info2{
+            display:none;
+        }
+
+    video::-webkit-media-controls-enclosure {
+        overflow:hidden;
+    }
+    video::-webkit-media-controls-panel {
+        width: calc(100% + 30px);
+    }
+
+    </style>
+</head>
+
+<body>
+    <div id="header">
+        <p>ShineLife Video</p>
+    </div>
+    <div id="content">
+        <div id="video" style="width:780px;height:450px;">
+            <video controls="controls" src="../video/fe291fe24e172.mp4"  style="object-fit:fill"></video>
+            <!-- <img class="videoimg" src="../images/travelPhoto2.jpg"> -->
+        </div>
+    </div>
+    <div class="info">
+       <!--  <span>播放次数：</span><input id="finish" type="text" name="" readonly="readonly"> -->
+        <span style="margin-left:118px;">Video Title:</span><span style="color:#6495ED;margin-right: 136px;">BlueSky</span> 
+        <span>Video Format:</span><span style="color:#6495ED;margin-right:73px;">MPEG2</span>
+        <span>Upload Timestamp:</span><span style="color:#6495ED;margin-left: 0px;">2018-03-01 10:30:35</span>
+    </div>
+    <div class="info2">
+        <span>视频权限：</span>
+       <!--  <span>播放次数：</span><input id="finish" type="text" name="" readonly="readonly"> -->
+        <span>剩余次数：</span><input id="remain" type="text"  readonly="readonly">
+        <span>播放时段显示：</span><input id="remain" type="text"  value="none" readonly="readonly">
+        <span>播放IP地址：</span><input id="remain" type="text"  readonly="readonly">
+    </div>
+    <div class="copyright">
+        <span>All Rights Reserved© www.bupt.edu.cn</span>
+    </div>
+</body>
+
+</html>

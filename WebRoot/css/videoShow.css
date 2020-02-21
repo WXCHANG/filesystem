@@ -1,0 +1,64 @@
+﻿/*body{
+    background:#999;
+}*/
+
+
+/*顶部*/
+
+#header {
+    background: #EBEBEB;
+    height: 50px;
+    line-height: 50px;
+    font-size: 18px;
+    padding-left: 20px;
+}
+
+
+
+
+/*内容*/
+
+#content {
+    background: #fff;
+}
+
+#video video {
+    width: 86%;
+    height: 95%;
+    margin: 0 auto;
+    margin-top: 30px;
+}
+
+#video {
+    margin: 0 auto;
+}
+
+input {
+    text-align: center;
+    width: 115px;
+}
+
+span {
+    margin-left: 20px;
+}
+
+.info {
+    width: 1000px;
+    margin: 0 auto;
+    margin-top: 10px;
+    margin-bottom: -10px;
+}
+
+.copyright {
+    margin: 0 auto;
+    width: 310px;
+    margin-top: 50px;
+}
+
+video::-webkit-media-controls-enclosure {
+    overflow: hidden;
+}
+
+video::-webkit-media-controls-panel {
+    width: calc(100% + 30px);
+}

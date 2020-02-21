@@ -1,0 +1,306 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.wxc.dao.ApplicationDataMapper" >
+  <resultMap id="BaseResultMap" type="com.wxc.entity.ApplicationData" >
+    <id column="id" property="id" jdbcType="INTEGER" />
+    <result column="value1" property="value1" jdbcType="VARCHAR" />
+    <result column="value1Encrypt" property="value1encrypt" jdbcType="VARCHAR" />
+    <result column="value2" property="value2" jdbcType="VARCHAR" />
+    <result column="value2Encrypt" property="value2encrypt" jdbcType="VARCHAR" />
+    <result column="value3" property="value3" jdbcType="VARCHAR" />
+    <result column="value3Encrypt" property="value3encrypt" jdbcType="VARCHAR" />
+    <result column="value4" property="value4" jdbcType="VARCHAR" />
+    <result column="value4Encrypt" property="value4encrypt" jdbcType="VARCHAR" />
+    <result column="value5" property="value5" jdbcType="VARCHAR" />
+    <result column="value5Hash" property="value5hash" jdbcType="VARCHAR" />
+    <result column="value6" property="value6" jdbcType="VARCHAR" />
+    <result column="storageTime" property="storagetime" jdbcType="VARCHAR" />
+    <result column="hash" property="hash" jdbcType="VARCHAR" />
+    <result column="txId" property="txid" jdbcType="VARCHAR" />
+    <result column="qrcode" property="qrcode" jdbcType="VARCHAR" />
+    <result column="channelname" property="channelname" jdbcType="VARCHAR" />
+    <result column="status" property="status" jdbcType="INTEGER" />
+    <result column="saveTime" property="savetime" jdbcType="VARCHAR" />
+    <result column="userId" property="userid" jdbcType="INTEGER" />
+  </resultMap>
+  <sql id="Base_Column_List" >
+    id, value1, value1Encrypt, value2, value2Encrypt, value3, value3Encrypt, value4, 
+    value4Encrypt, value5, value5Hash, value6, storageTime, hash, txId, qrcode, channelname, 
+    status, saveTime, userId
+  </sql>
+  <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.Integer" >
+    select 
+    <include refid="Base_Column_List" />
+    from application_data
+    where id = #{id,jdbcType=INTEGER}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer" >
+    delete from application_data
+    where id = #{id,jdbcType=INTEGER}
+  </delete>
+  <insert id="insert" parameterType="com.wxc.entity.ApplicationData" >
+    insert into application_data (id, value1, value1Encrypt, 
+      value2, value2Encrypt, value3, 
+      value3Encrypt, value4, value4Encrypt, 
+      value5, value5Hash, value6, 
+      storageTime, hash, txId, 
+      qrcode, channelname, status, 
+      saveTime, userId)
+    values (#{id,jdbcType=INTEGER}, #{value1,jdbcType=VARCHAR}, #{value1encrypt,jdbcType=VARCHAR}, 
+      #{value2,jdbcType=VARCHAR}, #{value2encrypt,jdbcType=VARCHAR}, #{value3,jdbcType=VARCHAR}, 
+      #{value3encrypt,jdbcType=VARCHAR}, #{value4,jdbcType=VARCHAR}, #{value4encrypt,jdbcType=VARCHAR}, 
+      #{value5,jdbcType=VARCHAR}, #{value5hash,jdbcType=VARCHAR}, #{value6,jdbcType=VARCHAR}, 
+      #{storagetime,jdbcType=VARCHAR}, #{hash,jdbcType=VARCHAR}, #{txid,jdbcType=VARCHAR}, 
+      #{qrcode,jdbcType=VARCHAR}, #{channelname,jdbcType=VARCHAR}, #{status,jdbcType=INTEGER}, 
+      #{savetime,jdbcType=VARCHAR}, #{userid,jdbcType=INTEGER})
+  </insert>
+  <insert id="insertSelective" parameterType="com.wxc.entity.ApplicationData" >
+    insert into application_data
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+      <if test="id != null" >
+        id,
+      </if>
+      <if test="value1 != null" >
+        value1,
+      </if>
+      <if test="value1encrypt != null" >
+        value1Encrypt,
+      </if>
+      <if test="value2 != null" >
+        value2,
+      </if>
+      <if test="value2encrypt != null" >
+        value2Encrypt,
+      </if>
+      <if test="value3 != null" >
+        value3,
+      </if>
+      <if test="value3encrypt != null" >
+        value3Encrypt,
+      </if>
+      <if test="value4 != null" >
+        value4,
+      </if>
+      <if test="value4encrypt != null" >
+        value4Encrypt,
+      </if>
+      <if test="value5 != null" >
+        value5,
+      </if>
+      <if test="value5hash != null" >
+        value5Hash,
+      </if>
+      <if test="value6 != null" >
+        value6,
+      </if>
+      <if test="storagetime != null" >
+        storageTime,
+      </if>
+      <if test="hash != null" >
+        hash,
+      </if>
+      <if test="txid != null" >
+        txId,
+      </if>
+      <if test="qrcode != null" >
+        qrcode,
+      </if>
+      <if test="channelname != null" >
+        channelname,
+      </if>
+      <if test="status != null" >
+        status,
+      </if>
+      <if test="savetime != null" >
+        saveTime,
+      </if>
+      <if test="userid != null" >
+        userId,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides="," >
+      <if test="id != null" >
+        #{id,jdbcType=INTEGER},
+      </if>
+      <if test="value1 != null" >
+        #{value1,jdbcType=VARCHAR},
+      </if>
+      <if test="value1encrypt != null" >
+        #{value1encrypt,jdbcType=VARCHAR},
+      </if>
+      <if test="value2 != null" >
+        #{value2,jdbcType=VARCHAR},
+      </if>
+      <if test="value2encrypt != null" >
+        #{value2encrypt,jdbcType=VARCHAR},
+      </if>
+      <if test="value3 != null" >
+        #{value3,jdbcType=VARCHAR},
+      </if>
+      <if test="value3encrypt != null" >
+        #{value3encrypt,jdbcType=VARCHAR},
+      </if>
+      <if test="value4 != null" >
+        #{value4,jdbcType=VARCHAR},
+      </if>
+      <if test="value4encrypt != null" >
+        #{value4encrypt,jdbcType=VARCHAR},
+      </if>
+      <if test="value5 != null" >
+        #{value5,jdbcType=VARCHAR},
+      </if>
+      <if test="value5hash != null" >
+        #{value5hash,jdbcType=VARCHAR},
+      </if>
+      <if test="value6 != null" >
+        #{value6,jdbcType=VARCHAR},
+      </if>
+      <if test="storagetime != null" >
+        #{storagetime,jdbcType=VARCHAR},
+      </if>
+      <if test="hash != null" >
+        #{hash,jdbcType=VARCHAR},
+      </if>
+      <if test="txid != null" >
+        #{txid,jdbcType=VARCHAR},
+      </if>
+      <if test="qrcode != null" >
+        #{qrcode,jdbcType=VARCHAR},
+      </if>
+      <if test="channelname != null" >
+        #{channelname,jdbcType=VARCHAR},
+      </if>
+      <if test="status != null" >
+        #{status,jdbcType=INTEGER},
+      </if>
+      <if test="savetime != null" >
+        #{savetime,jdbcType=VARCHAR},
+      </if>
+      <if test="userid != null" >
+        #{userid,jdbcType=INTEGER},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.wxc.entity.ApplicationData" >
+    update application_data
+    <set >
+      <if test="value1 != null" >
+        value1 = #{value1,jdbcType=VARCHAR},
+      </if>
+      <if test="value1encrypt != null" >
+        value1Encrypt = #{value1encrypt,jdbcType=VARCHAR},
+      </if>
+      <if test="value2 != null" >
+        value2 = #{value2,jdbcType=VARCHAR},
+      </if>
+      <if test="value2encrypt != null" >
+        value2Encrypt = #{value2encrypt,jdbcType=VARCHAR},
+      </if>
+      <if test="value3 != null" >
+        value3 = #{value3,jdbcType=VARCHAR},
+      </if>
+      <if test="value3encrypt != null" >
+        value3Encrypt = #{value3encrypt,jdbcType=VARCHAR},
+      </if>
+      <if test="value4 != null" >
+        value4 = #{value4,jdbcType=VARCHAR},
+      </if>
+      <if test="value4encrypt != null" >
+        value4Encrypt = #{value4encrypt,jdbcType=VARCHAR},
+      </if>
+      <if test="value5 != null" >
+        value5 = #{value5,jdbcType=VARCHAR},
+      </if>
+      <if test="value5hash != null" >
+        value5Hash = #{value5hash,jdbcType=VARCHAR},
+      </if>
+      <if test="value6 != null" >
+        value6 = #{value6,jdbcType=VARCHAR},
+      </if>
+      <if test="storagetime != null" >
+        storageTime = #{storagetime,jdbcType=VARCHAR},
+      </if>
+      <if test="hash != null" >
+        hash = #{hash,jdbcType=VARCHAR},
+      </if>
+      <if test="txid != null" >
+        txId = #{txid,jdbcType=VARCHAR},
+      </if>
+      <if test="qrcode != null" >
+        qrcode = #{qrcode,jdbcType=VARCHAR},
+      </if>
+      <if test="channelname != null" >
+        channelname = #{channelname,jdbcType=VARCHAR},
+      </if>
+      <if test="status != null" >
+        status = #{status,jdbcType=INTEGER},
+      </if>
+      <if test="savetime != null" >
+        saveTime = #{savetime,jdbcType=VARCHAR},
+      </if>
+      <if test="userid != null" >
+        userId = #{userid,jdbcType=INTEGER},
+      </if>
+    </set>
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.wxc.entity.ApplicationData" >
+    update application_data
+    set value1 = #{value1,jdbcType=VARCHAR},
+      value1Encrypt = #{value1encrypt,jdbcType=VARCHAR},
+      value2 = #{value2,jdbcType=VARCHAR},
+      value2Encrypt = #{value2encrypt,jdbcType=VARCHAR},
+      value3 = #{value3,jdbcType=VARCHAR},
+      value3Encrypt = #{value3encrypt,jdbcType=VARCHAR},
+      value4 = #{value4,jdbcType=VARCHAR},
+      value4Encrypt = #{value4encrypt,jdbcType=VARCHAR},
+      value5 = #{value5,jdbcType=VARCHAR},
+      value5Hash = #{value5hash,jdbcType=VARCHAR},
+      value6 = #{value6,jdbcType=VARCHAR},
+      storageTime = #{storagetime,jdbcType=VARCHAR},
+      hash = #{hash,jdbcType=VARCHAR},
+      txId = #{txid,jdbcType=VARCHAR},
+      qrcode = #{qrcode,jdbcType=VARCHAR},
+      channelname = #{channelname,jdbcType=VARCHAR},
+      status = #{status,jdbcType=INTEGER},
+      saveTime = #{savetime,jdbcType=VARCHAR},
+      userId = #{userid,jdbcType=INTEGER}
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+   <select id="queryNoSavedData" resultMap="BaseResultMap">
+    select 
+    <include refid="Base_Column_List" />
+    from application_data
+    where userId=#{userId} and status=1 order by storageTime desc limit #{pageCount},#{limit};
+  </select>
+   <select id="queryNoSavedCount" resultType="int">
+    select 
+    count(id)
+    from application_data
+    where userId=#{userId} and status=1;
+  </select>
+   <select id="querySavedData" resultMap="BaseResultMap">
+    select 
+    <include refid="Base_Column_List" />
+    from application_data
+    where userId=#{userId} and status=0 order by storageTime desc limit #{pageCount},#{limit};
+  </select>
+   <select id="querySavedCount" resultType="int">
+    select 
+    count(id)
+    from application_data
+    where userId=#{userId} and status=0;
+  </select>
+   <select id="queryAllData" resultMap="BaseResultMap">
+    select 
+    <include refid="Base_Column_List" />
+    from application_data
+    where userId=#{userId} order by storageTime desc limit #{pageCount},#{limit};
+  </select>
+   <select id="queryAllCount" resultType="int">
+    select 
+    count(id)
+    from application_data
+    where userId=#{userId};
+  </select>
+</mapper>

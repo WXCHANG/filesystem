@@ -1,0 +1,63 @@
+﻿
+#header{
+    background:#EBEBEB;
+    height: 50px;
+    line-height: 50px;
+    font-size: 18px;
+    padding-left: 20px;
+}
+
+.headTitle{
+	height: 55px;
+    width: 1025px;
+    margin-left:10px;
+    font-size: 17px;
+    line-height: 55px;
+    font-weight: 400;
+    color: rgb(85, 85, 85);
+    font-family: "microsoft yaHei", 微软雅黑, arial;
+}
+
+.row{
+	margin-top:20px;
+}
+
+.photo{
+    margin-left:10px;
+}
+
+img{
+	width:220px;
+	height:128px;
+}
+video{
+    width:200px;
+    height:175px;
+}
+li{
+    font-size:13px;
+    display:inline-block;
+    list-style:none;
+    margin-right:15px;
+    margin-top:30px;
+}
+.span1{
+	 color: #3399E0;
+     margin-left:1px;
+}
+.title{
+	width:180px;
+	font-size:13px;
+	height:60px;
+	line-height:30px;
+    border: 1px solid #D4D4D4;
+    padding-left: 18px;
+}
+
+audio{
+    width:220px;
+}
+
+.layui-col-md3{
+    margin-top:20px;
+}

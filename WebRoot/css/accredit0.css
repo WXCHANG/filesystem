@@ -1,0 +1,98 @@
+input {
+    width: 400px;
+    height: 19px;
+}
+
+#header {
+    background: #EBEBEB;
+    height: 50px;
+    line-height: 50px;
+    font-size: 18px;
+    padding-left: 20px;
+}
+
+.title {
+    height: 55px;
+    margin-left: 10px;
+    font-size: 16px;
+    line-height: 55px;
+    font-weight: 400;
+    color: rgb(85, 85, 85);
+    font-family: "microsoft yaHei", 微软雅黑, arial;
+}
+
+li {
+    margin-top: 15px;
+    font-size: 13px;
+}
+
+
+/*文件上传*/
+
+.content1 {
+    margin: 0 auto;
+    margin-top: 18px;
+    width: 680px;
+}
+
+.content1 ul {
+    text-align: center;
+}
+
+.content1 li:nth-child(6) button {
+    width: 65px;
+    margin-top:10px;
+}
+
+.select1 {
+    margin-right: 108px;
+    margin-left: 13px;
+}
+
+#file2 {
+    height: 22px;
+    width: 400px;
+    margin-left: 13px;
+}
+
+#file1 {
+    height: 22px;
+    width: 400px;
+    margin-right:74px;
+}
+
+.content1 fieldset {
+    width: 680px;
+    /*height: 260px;*/
+    border: 1px dotted #999;
+    border-radius: 5px;
+}
+
+legend {
+    font-size: 16px;
+}
+
+/*对称加密*/
+.content2 {
+    margin: 0 auto;
+    margin-top: 18px;
+    width: 680px;
+}
+
+.content2 fieldset {
+    width: 680px;
+    height: 100px;
+    border: 1px dotted #999;
+    border-radius: 5px;
+}
+
+.content2 ul li{
+    margin-left:105px;
+}
+.select1{
+    width:100px;
+}
+#fileSubmit{
+    margin-left: 110px;
+    margin-right: 100px;
+}

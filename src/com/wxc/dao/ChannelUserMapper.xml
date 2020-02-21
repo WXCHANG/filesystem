@@ -1,0 +1,288 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.wxc.dao.ChannelUserMapper" >
+  <resultMap id="BaseResultMap" type="com.wxc.entity.ChannelUser" >
+    <id column="id" property="id" jdbcType="INTEGER" />
+    <result column="userName" property="username" jdbcType="VARCHAR" />
+    <result column="password" property="password" jdbcType="VARCHAR" />
+    <result column="company" property="company" jdbcType="VARCHAR" />
+    <result column="channelName" property="channelname" jdbcType="VARCHAR" />
+    <result column="status" property="status" jdbcType="VARCHAR" />
+    <result column="secretKey" property="secretkey" jdbcType="VARCHAR" />
+    <result column="blockorg" property="blockorg" jdbcType="VARCHAR" />
+    <result column="channelIdentifier" property="channelidentifier" jdbcType="VARCHAR" />
+    <result column="email" property="email" jdbcType="VARCHAR" />
+    <result column="auditStatus" property="auditstatus" jdbcType="VARCHAR" />
+  </resultMap>
+  <sql id="Base_Column_List" >
+    id, userName, password, company, channelName, status, secretKey, blockorg, channelIdentifier, 
+    email, auditStatus
+  </sql>
+  <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.Integer" >
+    select 
+    <include refid="Base_Column_List" />
+    from channeluser
+    where id = #{id,jdbcType=INTEGER}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer" >
+    delete from channeluser
+    where id = #{id,jdbcType=INTEGER}
+  </delete>
+  <insert id="insert" parameterType="com.wxc.entity.ChannelUser" >
+    insert into channeluser (id, userName, password, 
+      company, channelName, status, 
+      secretKey, blockorg, channelIdentifier, 
+      email, auditStatus)
+    values (#{id,jdbcType=INTEGER}, #{username,jdbcType=VARCHAR}, #{password,jdbcType=VARCHAR}, 
+      #{company,jdbcType=VARCHAR}, #{channelname,jdbcType=VARCHAR}, #{status,jdbcType=VARCHAR}, 
+      #{secretkey,jdbcType=VARCHAR}, #{blockorg,jdbcType=VARCHAR}, #{channelidentifier,jdbcType=VARCHAR}, 
+      #{email,jdbcType=VARCHAR}, #{auditstatus,jdbcType=VARCHAR})
+  </insert>
+  <insert id="insertSelective" parameterType="com.wxc.entity.ChannelUser" >
+    insert into channeluser
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+      <if test="id != null" >
+        id,
+      </if>
+      <if test="username != null" >
+        userName,
+      </if>
+      <if test="password != null" >
+        password,
+      </if>
+      <if test="company != null" >
+        company,
+      </if>
+      <if test="channelname != null" >
+        channelName,
+      </if>
+      <if test="status != null" >
+        status,
+      </if>
+      <if test="secretkey != null" >
+        secretKey,
+      </if>
+      <if test="blockorg != null" >
+        blockorg,
+      </if>
+      <if test="channelidentifier != null" >
+        channelIdentifier,
+      </if>
+      <if test="email != null" >
+        email,
+      </if>
+      <if test="auditstatus != null" >
+        auditStatus,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides="," >
+      <if test="id != null" >
+        #{id,jdbcType=INTEGER},
+      </if>
+      <if test="username != null" >
+        #{username,jdbcType=VARCHAR},
+      </if>
+      <if test="password != null" >
+        #{password,jdbcType=VARCHAR},
+      </if>
+      <if test="company != null" >
+        #{company,jdbcType=VARCHAR},
+      </if>
+      <if test="channelname != null" >
+        #{channelname,jdbcType=VARCHAR},
+      </if>
+      <if test="status != null" >
+        #{status,jdbcType=VARCHAR},
+      </if>
+      <if test="secretkey != null" >
+        #{secretkey,jdbcType=VARCHAR},
+      </if>
+      <if test="blockorg != null" >
+        #{blockorg,jdbcType=VARCHAR},
+      </if>
+      <if test="channelidentifier != null" >
+        #{channelidentifier,jdbcType=VARCHAR},
+      </if>
+      <if test="email != null" >
+        #{email,jdbcType=VARCHAR},
+      </if>
+      <if test="auditstatus != null" >
+        #{auditstatus,jdbcType=VARCHAR},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.wxc.entity.ChannelUser" >
+    update channeluser
+    <set >
+      <if test="username != null" >
+        userName = #{username,jdbcType=VARCHAR},
+      </if>
+      <if test="password != null" >
+        password = #{password,jdbcType=VARCHAR},
+      </if>
+      <if test="company != null" >
+        company = #{company,jdbcType=VARCHAR},
+      </if>
+      <if test="channelname != null" >
+        channelName = #{channelname,jdbcType=VARCHAR},
+      </if>
+      <if test="status != null" >
+        status = #{status,jdbcType=VARCHAR},
+      </if>
+      <if test="secretkey != null" >
+        secretKey = #{secretkey,jdbcType=VARCHAR},
+      </if>
+      <if test="blockorg != null" >
+        blockorg = #{blockorg,jdbcType=VARCHAR},
+      </if>
+      <if test="channelidentifier != null" >
+        channelIdentifier = #{channelidentifier,jdbcType=VARCHAR},
+      </if>
+      <if test="email != null" >
+        email = #{email,jdbcType=VARCHAR},
+      </if>
+      <if test="auditstatus != null" >
+        auditStatus = #{auditstatus,jdbcType=VARCHAR},
+      </if>
+    </set>
+    <where>
+     userName = #{username,jdbcType=VARCHAR}
+     
+	<if test='id !=null and id !="" '>
+		and id = #{id,jdbcType=INTEGER}
+	</if>
+			
+			
+  </where>
+   
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.wxc.entity.ChannelUser" >
+    update channeluser
+    set userName = #{username,jdbcType=VARCHAR},
+      password = #{password,jdbcType=VARCHAR},
+      company = #{company,jdbcType=VARCHAR},
+      channelName = #{channelname,jdbcType=VARCHAR},
+      status = #{status,jdbcType=VARCHAR},
+      secretKey = #{secretkey,jdbcType=VARCHAR},
+      blockorg = #{blockorg,jdbcType=VARCHAR},
+      channelIdentifier = #{channelidentifier,jdbcType=VARCHAR},
+      email = #{email,jdbcType=VARCHAR},
+      auditStatus = #{auditstatus,jdbcType=VARCHAR}
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+  	  <select id="queryChannelUser" resultMap="BaseResultMap" parameterType="java.lang.Integer" >
+    select 
+    <include refid="Base_Column_List" />
+    from channeluser
+   order by id desc limit #{pageNum},#{limit}
+  </select>
+   <select id="queryChannels" resultType="com.wxc.entity.Channel" >
+    select 
+     id,channelname,description,groupuser,identifier,createTime,chaincode ,company
+    from channel 
+ 
+  </select>
+  
+  
+   <select id="getChannelUser" resultMap="BaseResultMap" parameterType="java.lang.String"  >
+    select 
+    <include refid="Base_Column_List" />
+    from channeluser
+    where userName = #{username}
+  </select>
+  
+   <select id="getChannelUserCount" resultType="java.lang.Integer" >
+    select 
+    	count(*)
+    from channeluser 
+  </select>
+  
+    <!--   查询用户 -->
+   <select id="queryGroupUserByName" resultType="com.wxc.entity.GroupUser" parameterType="java.lang.String">
+    select 
+    id, name, password, company, description, status, token
+    from group_user
+    where name= #{username}
+  </select>
+   <!--   查询一级用户 -->
+   <select id="queryAdminUserByName" resultType="com.wxc.entity.Admin" parameterType="java.lang.String">
+    select 
+     id, name, password, token, description, status
+    from admin
+    where name= #{username}
+  </select>
+    
+  
+  
+  <select id="login" resultMap="BaseResultMap" >
+    select 
+    <include refid="Base_Column_List" />
+    from channeluser
+    where userName=#{0} and password=#{1}
+  </select> 
+  
+  <!-- 查询已审核用户 -->
+  <select id="queryChannelUserExamined" resultMap="BaseResultMap" >
+    select 
+    <include refid="Base_Column_List" />
+    from channeluser
+    where auditStatus='1' or auditStatus='2'
+    order by id desc limit #{0},#{1}
+  </select> 
+  
+  <!-- 查询已审核用户总数 -->
+  <select id="queryChannelUserExaminedCount" resultType="java.lang.Integer" >
+    select 
+    count(id)
+    from channeluser
+    where auditStatus='1' or auditStatus='2'
+  </select> 
+  
+  <!-- 查询未审核用户 -->
+  <select id="queryChannelUserUnexamined" resultMap="BaseResultMap" >
+    select 
+    <include refid="Base_Column_List" />
+    from channeluser
+    where auditStatus=0
+    order by id desc limit #{0},#{1}
+  </select> 
+  
+  <!-- 查询未审核用户总数 -->
+  <select id="queryChannelUserUnexaminedCount" resultType="java.lang.Integer" >
+    select 
+    count(id)
+    from channeluser
+    where auditStatus='0'
+  </select> 
+  <!-- 查看所有版权文件-->
+	<select id="selectDigitalall" resultType="com.wxc.entity.Files">
+		select
+		id, name,path,type,speed,createtime,target,dif,mkey,algorithm 
+		 from files order by id desc LIMIT #{pagenum1},10;
+	</select>
+	
+	<!-- 查询所有版权文件数量 -->
+	<select id="selectDigitalcount" resultType="float">
+		select count(*) from files 
+	</select>
+	<!-- 查看所有文件,并分页，需要pagenum,按类别 -->  
+   <select id="selectallfile" resultType="com.wxc.entity.Files">
+		select id,name,path,type,speed,createtime,target,dif,mkey,algorithm 
+		 from files where dif = #{1} order by id desc LIMIT #{0},10;
+	</select>
+	<!-- 查询文件数量 -->
+	<select id="selectfilecount" parameterType="int" resultType="float">
+		select count(*) from files where dif=#{dif} 
+	</select>
+	
+		<!-- 查看许可证播放次数 -->  
+   <select id="selectnum" parameterType="int" resultType="int">
+		select num from licences where fileid=#{id};
+	</select>
+	<!-- 修改设备信息 -->
+	<update id="numless" parameterType="int">
+		update licences set 
+		num=num-1
+		where fileid=#{id}
+	</update>
+</mapper>

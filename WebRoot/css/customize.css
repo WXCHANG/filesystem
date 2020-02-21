@@ -1,0 +1,22 @@
+.text-body{
+    height: 80%;
+    display: flex;
+    flex-flow: column;
+    justify-content: space-between;
+    align-items: center;
+    padding-top: 30px;
+}
+.text-body form{
+    width: 480px;
+    padding: 0 40px 10px;
+}
+.input-required::before{
+    content: "*";
+    color: red;
+    font-size: 14px;
+    margin-right: 3px;
+}
+#editTitle .layui-form-radio{
+    margin: 0;
+    padding: 0;
+}

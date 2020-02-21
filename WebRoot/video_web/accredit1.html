@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>加密引擎</title>
+    <link rel="stylesheet" type="text/css" href="../base/css/layui.css">
+    <link rel="stylesheet" type="text/css" href="../css/accredit1.css">
+    <script type="text/javascript" src="../base/jquery-3.2.1.min.js"></script>
+    <script type="text/javascript" src="../js/main.js"></script>
+</head>
+
+<body>
+    <div id="header">
+        <p>CPSec加密引擎</p>
+    </div>
+    <div class="content">
+        <div class="content1">
+            <fieldset>
+                <legend>对称加密</legend>
+                <ul>
+                    <li>
+                        <span>输入文件：</span>
+                        <input type="file" name="" id="file1">
+                        <label for="file1">浏览</label>
+                    </li>
+                    <li>
+                        <span>对称算法：</span>
+                        <select class="select1">
+                            <option>AES-128</option>
+                        </select>
+                        <span>加密模式：</span>
+                        <select>
+                            <option>CBC</option>
+                        </select>
+                        <button class="encryption">对称加密</button>
+                    </li>
+                </ul>
+            </fieldset>
+        </div>
+        <div class="content2">
+            <fieldset>
+                <legend>数字签名</legend>
+                <ul>
+                    <li>
+                        <label for="file3">摘要算法：</label>
+                        <input type="text" name="" id="file3" value="SHA1">
+                        <button>消息摘要</button>
+                    </li>
+                    <li>
+                        <label for="file4">摘要结果：</label>
+                        <input type="text" name="" id="file4" value="0f184595as55a920f6a10b4656dsa5465d4565c">
+                        <button>数字签名</button>
+                    </li>
+                    <li>
+                        <span>公钥算法：</span>
+                        <select class="select2">
+                            <option>ECC</option>
+                        </select>
+                        <span>密钥长度：</span>
+                        <select>
+                            <option>192</option>
+                        </select>
+                        <button>验证签名</button>
+                    </li>
+                </ul>
+            </fieldset>
+        </div>
+        <div class="content3">
+            <fieldset class="field3">
+                <legend>操作结果</legend>
+                <table class="table1">
+                    <thead>
+                        <td>操作编号</td>
+                        <td>操作状态</td>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>
+                                <span>1</span>
+                                <input type="checkbox" name="">
+                            </td>
+                            <td>CPSec媒体内容加密已经成功</td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <span>2</span>
+                                <input type="checkbox" name="">
+                            </td>
+                            <td>CPSec媒体许可证书签名成功</td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <span>3</span>
+                                <input type="checkbox" name="">
+                            </td>
+                            <td>CPSec媒体许可证书验证成功</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </fieldset>
+        </div>
+    </div>
+    </script>
+</body>
+
+</html>

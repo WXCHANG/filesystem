@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>视频展示</title>
+    <meta charset="utf-8">
+    <link rel="stylesheet" type="text/css" href="../css/videoShow.css">
+    <link rel="stylesheet" type="text/css" href="../base/css/layui.css">
+    <script type="text/javascript" src="../base/jquery-3.2.1.min.js"></script>
+    <script type="text/javascript" src="../js/videoShow.js"></script>
+</head>
+
+<body>
+    <div id="header">
+        <p>视频展示</p>
+    </div>
+    <div id="content">
+        <div id="video" style="width:780px;height:450px;">
+            <video controls="controls" src="../video/fe291fe24e172.mp4" style="object-fit:fill"></video>
+        </div>
+    </div>
+    <div class="info">
+        <span style="margin-left:113px;">剩余次数：</span><input id="remain" type="text"  readonly="readonly">
+        <span style="margin-left:74px">播放剩余token值：</span><input id="remain1" type="text"  value="none" readonly="readonly" style="margin-right:46px">
+        <span>播放IP地址：</span><input id="remain" type="text"  readonly="readonly">
+    </div>
+    <div class="copyright">
+        <span>版权所有 ©2018 北京国泰信安科技有限公司</span>
+    </div>
+</body>
+
+</html>

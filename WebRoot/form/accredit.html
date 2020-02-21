@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>加密引擎</title>
+	<meta charset="UTF-8">
+    <link rel="stylesheet" type="text/css" href="../base/css/layui.css">
+    <link rel="stylesheet" type="text/css" href="../css/accredit0.css">
+    <script type="text/javascript" src="../base/jquery-3.2.1.min.js"></script>
+    <script type="text/javascript" src="../base/layui.js"></script>
+    <script type="text/javascript" src="../js/main.js"></script>
+    <style>
+    .layui-upload-choose{
+        position: relative;
+        top: -25px;
+        left: 220px;
+    }
+    </style>
+</head>
+<body>
+    <div id="header">
+        <p>CPSec文件加密</p>
+    </div>
+    <div class="content">
+        <div class="content1">
+            <fieldset>
+                <legend>文件上传</legend>
+                <form id="upload" class="layui-form" style="margin-right: 30px;" action="/SpringMVC2017/addfile.do" method="post" encType="multipart/form-data" target="targetIfr">
+                    <div class="layui-form-item" style="height: 38px;">
+                        <label class="layui-form-label">选择文件</label>
+                        <div class="layui-input-block layui-upload">
+                            <button type="button" class="layui-btn" id="file">
+                                <i class="layui-icon">&#xe67c;</i>上传文件
+                            </button>
+                        </div>
+                        <span class="layui-inline layui-upload-choose"></span>
+                    </div>
+                    <div class="layui-form-item">
+                        <label class="layui-form-label">文件类型</label>
+                        <div class="layui-input-block">
+                            <input type="radio" name="type" value="MP3" title="MP3" checked>
+                            <input type="radio" name="type" value="MP4" title="MP4">
+                            <input type="radio" name="type" value="WAV" title="WAV">
+                            <input type="radio" name="type" value="WMA" title="WMA">
+                            <input type="radio" name="type" value="AAC" title="AAC">
+                            <input type="radio" name="type" value="AVI" title="AVI">
+                            <input type="radio" name="type" value="MPEG2" title="MPEG2">
+                            <input type="radio" name="type" value="FLV" title="FLV">
+                            <input type="radio" name="type" value="其他" title="其他">
+                        </div>
+                    </div>
+                    <div class="layui-form-item">
+                        <label class="layui-form-label">内容标识</label>
+                        <div class="layui-input-block">
+                            <input type="text" name="target" placeholder="" autocomplete="off" class="layui-input" lay-verify="required" value="CPSecDRM-VIDEO-00001">
+                        </div>
+                    </div>
+                    <div class="layui-form-item">
+                        <label class="layui-form-label">内容来源</label>
+                        <div class="layui-input-block">
+                            <input type="text" name="" placeholder="" autocomplete="off" class="layui-input" value="本地" lay-verify="required">
+                        </div>
+                    </div>
+                    <div class="layui-form-item">
+                        <label class="layui-form-label">媒体类型</label>
+                        <div class="layui-input-block">
+                            <input type="radio" name="dif" value="1" title="视频" checked>
+                            <input type="radio" name="dif" value="2" title="音频">
+                        </div>
+                    </div>
+                    <div class="layui-form-item">
+                        <label class="layui-form-label">加密算法</label>
+                        <div class="layui-input-block">
+                            <select name="algorithm" lay-verify="required">
+                                <option value=""></option>
+                                <option value="AES">AES</option>
+                                <option value="DES">DES</option>
+                                <option value="3DES">3DES</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="layui-form-item">
+                        <label class="layui-form-label">加密密钥</label>
+                        <div class="layui-input-block">
+                            <input type="text" name="mkey" placeholder="" autocomplete="off" class="layui-input" lay-verify="required" value="1234567890ABCDEF">
+                        </div>
+                    </div>
+                    <div class="layui-form-item">
+                        <div class="layui-input-block subBtn">
+                            <button class="layui-btn" lay-filter="formDemo" id="fileSubmit">提交</button>
+                            <button type="reset" class="layui-btn layui-btn-primary">重置</button>
+                        </div>
+                    </div>
+                </form>
+            </fieldset>
+        </div>
+    </div>
+</body>
+<script type="text/javascript">
+layui.config({
+    base: '/base/lay/modules/'
+}).use(['element','form','layer','upload'], function() {
+    var elem = layui.element
+    var layer = layui.layer;
+    var form = layui.form;
+    var upload = layui.upload;
+    
+    upload.render({
+        elem: '#file'
+        ,accept: "file"
+        ,auto: false //选择文件后不自动上传
+        ,choose: function(obj){
+            obj.preview(function(index, file, result){
+                console.log(index); //得到文件索引
+                console.log(file); //得到文件对象
+                // console.log(result); //得到文件base64编码   
+                objFile = file;
+                $(".layui-upload-choose").html(file.name)
+            });
+        }
+    })
+
+    form.on('submit(formDemo)', function(data){
+        console.log(data.elem) //被执行事件的元素DOM对象
+        console.log(data.form) //被执行提交的form对象
+        console.log(data.field) //当前容器的全部表单字段
+
+        
+        return false; //阻止表单跳转。。
+    });
+})
+</script>
+</html>

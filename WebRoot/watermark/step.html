@@ -1,0 +1,720 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>水印</title>
+    <meta charset="UTF-8">
+    <!-- <link rel="stylesheet" type="text/css" href="bootstrap/css/bootstrap.css"> -->
+    <link rel="stylesheet" type="text/css" href="../base/layui/css/layui.css">
+    <link rel="stylesheet" type="text/css" href="../css/publicStyle.css">
+    <script type="text/javascript" src="..//base/jquery-3.2.1.min.js"></script>
+    <script type="text/javascript" src="../base/layui/layui.js"></script>
+    <style type="text/css">
+        body{
+            min-width: 1080px;
+            /*width: 1080px;*/
+            /*padding-left: 500px;*/
+            /*overflow: hidden;*/
+            margin: 0 auto;
+        }
+        label,input,select,span,div{
+            font-size: 12px;
+        }
+        label{
+            display: inline-block;
+            min-width: 30px;
+            height: 28px;
+            line-height: 28px;
+            margin: 0 5px;
+            text-align: right;
+        }
+        input,select{
+            height: 24px;
+            line-height: 24px;
+        }
+        input[type=text]{
+            width: 440px;
+            /*padding-left: 10px;*/
+            text-indent: 5px;
+        }
+        input[type=checkbox],
+        input[type=radio]{
+            margin-left: 5px;
+            
+        }
+        select{
+            min-width: 130px;
+            text-indent: 5px;
+        }
+        select:disabled{
+            background: #CCC;
+        }
+        .row{
+            display: flex;
+            flex-flow: row nowrap;
+            justify-content: flex-start;
+        }
+        .row-wrap{
+            flex-flow: row wrap;
+        }
+        .text_box{
+            display: flex;
+            flex-flow: row nowrap;
+            justify-content: flex-start;
+
+        }
+        .text_box>div{
+            width: 25%;
+        }
+        .col-6{
+            width: 518px;
+            display: flex;
+            flex-flow: row nowrap;
+            align-items: center;
+            margin: 2px 0 5px;
+        }
+        fieldset.col-6{
+            margin: 2px 0 0;
+        }
+        .col-6 .input1{
+            width: 160px;
+        }
+        .col-6 .select1{
+            width: 130px;
+        }
+        .password label{
+            width: 85px;
+            text-align: left;
+            text-indent: 6px;
+        }
+        .password input[type="text"]{
+            width: 387px;
+        }
+        /*.encrypt label{
+            width: 50px;
+        }*/
+        .set span{
+            width: 90px;
+            display: inline-block;
+            height: 20px;
+            line-height: 20px;
+            margin: 0 100px 0 8px;
+            font-size: 12px;
+        }
+        /*.encrypt .export{
+            padding-left: 23px;
+        }*/
+        .div1 .export label{
+            margin-left: 10px;
+        }
+        .radio_input span{
+            height: 28px;
+            line-height: 28px;
+            margin: 0 2px;
+        }
+        .radio_input{
+            padding-left: 5px;
+        }
+        input[type="radio"]{
+            height: 28px;
+            line-height: 28px;
+        }
+        img{
+            width: 360px;
+            height: 360px;
+            position: absolute;
+            top: 0;
+            right: 0;
+            bottom: 0;
+            left: 0;
+            margin: auto;
+        }
+        .watermark{
+            display: flex;
+            flex-flow: column nowrap;
+
+            justify-content: space-between;
+            padding: 0 20px;
+        }
+        .watermark{
+            width: 500px;
+            margin: 0;
+        }
+        .watermark fieldset{
+            width: 100%;
+            height: 180px;
+            margin: 0;
+        }
+        .img_box img{
+            margin: 15px auto;
+        }
+        .div_file span{
+            width: 64px;
+        }
+        .div1 .div_file li{
+            padding-left: 11px;
+        }
+        .div1 .div_file input[type="text"]{
+            width: 412px;
+        }
+        .div2 .div_file li{
+            padding-left: 10px;
+        }
+        .div2 .div_file input[type="text"]{
+            width: 433px;
+        }
+        .div3 .div_file li{
+            padding-left: 6px;
+        }
+        .div2 label{
+            width: 50px;
+        }
+        .div3 .div_file input[type="text"]{
+            width: 413px;
+        }
+        img::after {
+            background: #CCC;
+            background-size: cover;
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+        }
+        table{
+            width: 100%;
+        }
+        td{
+            height: 20px;
+        }
+        .row_between{
+            justify-content: space-between;
+        }
+        .operate button{
+            width: 60px;
+            height: 24px;
+            margin: 30px 10px 0;
+        }
+        .content>div{
+            margin-bottom: 5px;
+        }
+        .img_box{
+            position: relative;
+            height: 380px;
+        }
+        .div2 .export {
+            padding-left: 18px;
+        }
+        .div2 .col-6 {
+            width: 508px;
+        }
+        .div3 .col-6{
+            margin: 0;
+        }
+        .encrypt_img_new.blur{
+            filter: blur(10px);
+        }     
+    </style>
+</head>
+
+<body>
+    <div class="layui-tab">
+        <ul class="layui-tab-title">
+            <li class="layui-this">水印嵌入</li>
+            <li>水印提取</li>
+            <li>加密保护</li>
+        </ul>
+        <div class="layui-tab-content">
+            <div class="layui-tab-item layui-show">
+                <div class="content div1">
+                    <div class="row">           
+                        <div style="width: 100%;">
+                            <fieldset class="">
+                                <legend>参数设置</legend>
+                                <ul class="row-wrap">
+                                    <li class="row export">
+                                        <div class="col-6">
+                                            <label>图片水印</label>
+                                            <input type="text" name="">
+                                        </div>
+                                        <div class="col-6">
+                                            <label>文字水印</label>
+                                        </div>
+                                    </li>
+                                    <!-- <li class="export">
+                                    </li>
+                                    <li class="row radio_input">
+                                    </li> -->
+                                    <li class=" row export">
+                                        <div class="col-6">
+                                            <label>水印强度</label>
+                                            <input type="number" name="" max="20" min="1" value="10">
+                                            <label>范围：1~20</label>
+                                        </div>
+                                        <div class="col-6 radio_input">
+                                            <input type="radio" name="file_type" checked="">
+                                            <span>字符串</span>
+                                            <input type="text" name="">
+                                        </div>
+                                    </li>
+                                    <li class="row export">
+                                        <div class="col-6">
+                                            <div class="row">
+                                                <label>输出选项</label>
+                                                <select class="select1">
+                                                    <option>指定目录</option>
+                                                </select>
+                                            </div>
+                                            <div style="margin-left: 62px;">
+                                                <label style="width: 70px;">追加文件名</label>
+                                                <input type="text" name="" class="input1" value="_marked">
+                                            </div>
+                                        </div>
+                                        <div class="col-6 radio_input">
+                                            <input type="radio" name="file_type">
+                                            <span>读文件</span>
+                                            <input type="text" name="">
+                                        </div>
+                                    </li>
+                                    <li class="col-6 export">
+                                        <div class="col-6">
+                                             <label>输出目录</label>
+                                            <!-- <input type="file" id="file_input"/> -->
+                                            <input type="text" name="">
+                                        </div>
+                                           
+                                    </li>
+                                </ul>
+                            </fieldset>
+                        </div> 
+                    </div>
+                    <div class="row">                    
+                        <fieldset class="img_box col-6">
+                            <legend>原始图像</legend>
+                            <img src="" class="embed_old">
+                        </fieldset>
+                        <fieldset class="img_box col-6">
+                            <legend>水印载体</legend>
+                            <img src="" class="embed_new">
+                        </fieldset>
+                    </div>
+                    <div class="div_file">
+                        <div>
+                            <form class="row row_between">
+                                <ul>
+                                    <li class="row radio_input">
+                                        <input type="radio" name="file_type">
+                                        <span>处理文件夹</span>
+                                        <input type="text" name="">
+                                    </li>
+                                    <li class="row radio_input">
+                                        <input type="radio" name="file_type" checked="">
+                                        <span>处理文件</span>
+                                        <input type="file" name="" class="file_btn" id="embed" style="height: 28px;line-height: 30px;">
+                                    </li>
+                                </ul>
+                                <div class="operate">
+                                    <button type="button" class="btn_start" id="embed_btn">开始</button>
+                                    <button type="button" disabled>停止</button>
+                                </div>
+                            </form>
+                        </div>
+                        <table class="embed_table layui-table">
+                            <thead>
+                                <td width="30%">原始文件</td>
+                                <td width="15%">文件大小</td>
+                                <td width="30%">输出文件</td>
+                                <td width="15%">文件大小</td>
+                                <td width="10%">状态</td>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+            <div class="layui-tab-item">
+                <div class="content div3">
+                    <div class="row">           
+                        <div class="">
+                            <fieldset>
+                                <legend>输出设置</legend>
+                                <ul>
+                                    <li class="row export">
+                                        <div class="col-6">
+                                             <div class="row">
+                                                <label>输出选项</label>
+                                                <select class="select1">
+                                                    <option>指定目录</option>
+                                                </select>
+                                            </div>
+                                            <div style="margin-left: 67px;">
+                                                <label style="width: 70px;">追加文件名</label>
+                                                <input type="text" name="" class="input1" value="">
+                                            </div>
+                                        </div>
+                                        <div class="col-6">
+                                            <label>输出目录</label>
+                                        <input type="text" name="">
+                                        </div>
+                                    </li>
+                                    <li class="col-6">
+                                        <input type="checkbox" name="">
+                                        <label>仅检测水印</label>
+                                    </li>
+
+                                </ul>
+                            </fieldset>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <fieldset class="col-6 img_box">
+                            <legend>水印载体</legend>
+                            <img src="" class="extract_old">
+                        </fieldset>
+                        <div class="watermark">
+                            <!-- <div class="">
+                            </div> -->
+                            <fieldset class="">
+                                <legend>图片水印</legend>
+                            </fieldset>
+                            <fieldset class="">
+                                <legend>文字水印</legend>
+                            </fieldset>
+                        </div>
+                    </div>
+                    <div class="div_file">
+                        <div>
+                            <form class="row row_between">
+                                <ul>
+                                    <li class="row radio_input">
+                                        <input type="radio" name="file_type">
+                                        <span>处理文件夹</span>
+                                        <input type="text" name="">
+                                    </li>
+                                    <li class="row radio_input">
+                                        <input type="radio" name="file_type" checked="">
+                                        <span>处理文件</span>
+                                        <input type="file" name="" class="file_btn" id="extract" style="height: 28px;line-height: 30px;">
+                                    </li>
+                                </ul>
+                                <div class="operate">
+                                    <button type="button" class="btn_start" id="extract_btn">开始</button>
+                                    <button type="button" disabled>停止</button>
+                                </div>
+                            </form>
+                        </div>
+                        <table class="extract_table layui-table">
+                            <thead>
+                                <td>原始文件</td>
+                                <td>文件大小</td>
+                                <td>输出文件</td>
+                                <td>文件大小</td>
+                                <td>状态</td>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>        
+                </div>
+            </div>
+            <div class="layui-tab-item">
+                <div class="content div2 encrypt">
+                    <div class="row">         
+                        <fieldset>
+                            <legend>参数设置</legend>
+                            <ul>
+                                <li class="row row-wrap set">
+                                    <div class="col-6">
+                                        <div class="row">
+                                            <input type="checkbox" name="">
+                                            <span>禁止打印</span>
+                                        </div>
+                                        <div class="row">
+                                            <input type="checkbox" name="">
+                                            <span>禁止导出</span>
+                                        </div>
+                                        <div class="row">
+                                            <input type="checkbox" name="">
+                                            <span>绑定设备</span>
+                                        </div>
+                                    </div>
+                                    <div class="col-6">
+                                        <input type="checkbox" name="">
+                                        <label>口令保护</label>
+                                        <input type="text" name="">
+                                    </div>
+                                </li>
+                                <li class="row">
+                                    <div class="col-6">
+                                        <input type="checkbox" name="">
+                                        <label>使用次数</label>
+                                        <input type="text" name="">
+                                    </div>
+                                    <div class="col-6">
+                                        <input type="checkbox" name="">
+                                        <label>起始日期</label>
+                                        <input type="text" name="">
+                                    </div>
+                                </li>
+                                <li class="row">
+                                    <div class="col-6">
+                                        <input type="checkbox" name="">
+                                        <label>截止日期</label>
+                                        <input type="text" name="">
+                                    </div>
+                                    <div class="col-6 export">
+                                        <div class="row">
+                                            <label>输出选项</label>
+                                            <select class="select1">
+                                                <option>指定目录</option>
+                                            </select>
+                                        </div>
+                                        <div style="margin-left: 53px;">
+                                            <label style="width: 70px;">追加文件名</label>
+                                            <input type="text" name="" class="input1" value="">
+                                        </div> 
+                                    </div>
+                                </li>
+                                <li class="row">
+                                    <div class="col-6 export">
+                                        <label>输出目录</label>
+                                        <input type="text" name="" style="width: 426px;">
+                                    </div>
+                                    <div class="col-6">
+                                        
+                                    </div> 
+                                </li>
+                            </ul>
+                        </fieldset>
+                    </div>
+                    <div class="row">
+                        <fieldset class="img_box col-6">
+                            <legend>原始图像</legend>
+                            <img src="" class="encrypt_img_old">
+                        </fieldset>
+                        <fieldset class="img_box col-6">
+                            <legend>加密图像</legend>
+                            <img src="" class="encrypt_img_new">
+                        </fieldset>
+                    </div>
+                    <div class="div_file">
+                        <div class="">
+                            <form class="row row_between">
+                                <ul>
+                                    <li class="row radio_input">
+                                        <input type="radio" name="file_type">
+                                        <span>处理文件夹</span>
+                                        <input type="text" name="">
+                                    </li>
+                                    <li class="row radio_input">
+                                        <input type="radio" name="file_type" checked="">
+                                        <span>处理文件</span>
+                                        <input type="file"  name="" class="file_btn" id="encrypt" style="height: 28px;line-height: 30px;">
+                                    </li>
+                                </ul>
+                                <div class="operate">
+                                    <button type="button" class="btn_start" id="encrypt_btn">开始</button>
+                                    <button type="button" disabled>停止</button>
+                                </div>
+                            </form>
+                        </div>
+                        <table class="encrypt_table layui-table">
+                            <thead>
+                                <td>原始文件</td>
+                                <td>文件大小</td>
+                                <td>输出文件</td>
+                                <td>文件大小</td>
+                                <td>状态</td>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+                
+               
+                
+    <div>
+            
+    </div>
+    <script>
+    //注意：选项卡 依赖 element 模块，否则无法进行功能性操作
+    layui.use(['element','layer'], function(){
+        let element = layui.element;
+        let layer = layui.layer;
+
+        $('input[type="file"]').on('change', function() {
+
+            // $(".encrypt_img_new").removeClass("blur")
+            _index = layer.load(1, {
+                content: "<div style='margin-left:-23px;padding-top:44px;width:120px;color:#FFF;'>正在处理(<span id='loadProgress' >34</span>%)</div>",
+                shade: [0.5, '#000']
+            });
+
+            setTimeout(function () { 
+                layer.close(_index);
+                return; 
+            }, 500);
+
+            let file = this.files[0];
+            let reader = new FileReader();
+            let _id = $(this).attr("id")
+            let _size = Math.floor(file.size/1024)+"KB"
+            let _html = "";
+            var url = null;  
+            reader.readAsDataURL(file); //读取此文件的File对象
+            if (window.createObjcectURL != undefined) {  
+                url = window.createOjcectURL(file);  
+            } else if (window.URL != undefined) {  
+                url = window.URL.createObjectURL(file);  
+            } else if (window.webkitURL != undefined) {  
+                url = window.webkitURL.createObjectURL(file);  
+            }
+
+
+            reader.onload = function(e) {
+                e.target.result
+                //result属性将包含一个data:URL格式的字符串（base64编码），以表示所读取文件内容
+                var image = new Image();
+                image.src = e.target.result;
+                console.log(e.target.result)
+                $("#img").attr("src",e.target.result)
+                let htmlString = `
+                    <tr>
+                        <td>`+file.name+`</td>
+                        <td>`+_size+`</td>
+                        <td></td>
+                        <td></td>
+                        <td class="status"></td>
+                    </tr>
+                `
+
+                
+                switch(_id) {
+                    case "embed":
+                        $(".embed_old").attr("src", e.target.result)
+                        _html = $(".embed_table tbody").html()
+                        $(".embed_table tbody").html(htmlString+_html)
+                        break;
+                    case "extract":
+                        $(".extract_old").attr("src", e.target.result)
+                        _html = $(".extract_table tbody").html()
+                        $(".extract_table tbody").html(htmlString+_html)
+                        break;   
+                    case "encrypt":
+                        $(".encrypt_img_old").attr("src", e.target.result)
+                        _html = $(".encrypt_table tbody").html()
+                        $(".encrypt_table tbody").html(htmlString+_html)
+                        break;  
+                    default:
+                        return;
+
+                }
+
+                $(".btn_start").on("click", function () {
+
+                    _index = layer.load(1, {
+                        content: "<div style='margin-left:-23px;padding-top:44px;width:120px;color:#FFF;'>正在处理(<span id='loadProgress' >64</span>%)</div>",
+                        shade: [0.5, '#000']
+                    });
+                    
+                    setTimeout(function () { 
+                        layer.close(_index);
+                        return; 
+                    }, 800);
+
+                    let _id = $(this).attr("id");
+                    switch(_id) {
+                        case "embed_btn":
+                            $(".embed_new").attr("src", e.target.result)
+                            $(".embed_table .status").text("已完成")
+                            break;
+                        case "extract_btn":
+                            $(".extract_table .status").text("已完成")
+                            break;   
+                        case "encrypt_btn":
+                            $(".encrypt_img_new").attr("src", e.target.result).addClass("blur")
+                            $(".encrypt_table .status").text("已完成")
+                            break;  
+                        default:
+                            return;
+                    }
+
+                    
+                })
+            }
+        })
+
+        
+    });
+    </script>
+</body>
+
+</html>

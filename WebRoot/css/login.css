@@ -1,0 +1,59 @@
+@CHARSET "UTF-8";
+body{
+   background: url('../images/bg.jpg') no-repeat left top;
+   background-size:100%;
+}
+.login {
+    padding-top: 10%;
+    width: 26%;
+}
+.content_header h1{
+    font-size: 22px;
+    text-align: center;
+    padding: 35px 0px;
+    float: left;
+}
+
+.content_header img{
+    width: 100%;
+    padding-bottom: 20px;
+}
+
+.content{
+    width: 600px;
+    background: #fff;
+    margin: 0px auto;
+    border-radius: 4px;
+}
+
+.btn-center{
+    text-center:center;
+    margin:0 auto;
+}
+
+.content > h1{
+    color: #a4a3a3;
+    text-align: center;
+    padding: 10px;
+}
+.form_btnGroup{
+    display: -webkit-flex;
+    display: -moz-flex;
+    display: -ms-flex;
+    display: -o-flex;
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: space-between;
+    align-items: center;
+}
+.form_btnGroup{
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: space-between;
+    align-items: center;
+}
+.form_btnGroup button{
+    width: 75px;
+    text-align: center;
+    letter-spacing: 10px;
+}

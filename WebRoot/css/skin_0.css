@@ -1,0 +1,41 @@
+#div_side_0, #div_side_1 {
+	background: darkgrey;
+}
+
+.layui-layout-admin header.layui-header {
+	/* background: rgb(30, 159, 255) */
+	background-color: #284895;
+}
+
+.layui-bg-black, .layui-nav {
+	background-color: #284895;
+}
+
+.layui-nav-itemed .layui-nav-child {
+	background-color: #284895;
+}
+
+.layui-nav-itemed .layui-nav-child dd a {
+	padding-left: 20px;
+	background-color: #254696;
+}
+
+td {
+	word-wrap: break-word;
+}
+
+.layui-nav-tree .layui-nav-child dd.layui-this, .layui-nav-tree .layui-nav-child dd.layui-this a,
+	.layui-nav-tree .layui-this, .layui-nav-tree .layui-this>a,
+	.layui-nav-tree .layui-this>a:hover {
+	background-color: #223d7b !important;
+	color: #fff;
+}
+
+.layui-header {
+	height: 75px;
+}
+
+.title-text {
+	height: 75px;
+	color: #fff;
+}

@@ -1,0 +1,224 @@
+<html>
+
+<head>
+    <title>Document</title>
+    <meta http-equiv="pragma" content="no-cache">
+    <meta http-equiv="cache-control" content="no-cache">
+    <meta http-equiv="expires" content="0">
+    <meta http-equiv="keywords" content="log">
+    <meta http-equiv="description" content="operation log">
+    <link rel="stylesheet" type="text/css" href="../css/user1.css">
+    <link rel="stylesheet" href="../base/layui/css/layui.css">
+    <link rel="stylesheet" href="../base/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="../css/table.css">
+    <script type="text/javascript" src="../base/jquery-3.2.1.min.js"></script>
+    <script type="text/javascript" src="../base/layui/layui.js"></script>
+    <script type="text/javascript" src="../base/bootstrap/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="../base/bootstrap/js/bootstrapValidator.js"></script>
+    <!--[if lt IE9]> 
+    <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+    <style>
+
+    td,
+    caption {
+        font-size: 14px !important;
+        word-break: break-all;
+        word-wrap: break-word;
+        vertical-align: middle !important;
+    }
+
+    #details {
+        display: flex;
+        flex-flow: row;
+        justify-content: space-between;
+        align-items: flex-start;
+        margin: 10px 0 0 85.5px;
+        position: relative;
+    }
+    
+    .tableBox{
+        width:619px;
+    }
+    #qrcode {
+        width: 206px;
+        height: 189px;
+        border: 1px solid #ccc;
+        /* background-color: red; */
+    }
+    /* .text-body,.text-body1 {
+	
+	padding: 10px 15px;
+	margin: 30px 16px;
+	border-radius: 10px;
+} */
+    /* .text-body1 {
+	border: 1px dotted #ccc;
+} */
+
+    .imgBox {
+        display: flex;
+        flex-flow: column;
+        justify-content: flex-start;
+        align-items: center;
+        position: absolute;
+        left:746px;
+        bottom:0%;
+    }
+      #picture1 {
+        width: 220px;
+        height: 220px;
+        border: 1px solid #ccc;
+        margin-bottom: 9px;
+        /* background-color: blue; */
+    }
+       #picture2 {
+        width: 220px;
+        height: 220px;
+        border: 1px solid #ccc;
+        /* background-color: blue; */
+    }
+
+    .tdContent {
+        width: 505px;
+    }
+    .tdContent2{
+    	width:600px;
+    }
+    .column{
+    	width:163px;
+        background: #eee;
+    }
+    .column2{
+    	width:118px;
+    	background:#eee;
+    }
+    .table{
+    	margin-bottom:0;
+    }
+    .rowTwo{
+    	margin-left:85.5px;
+    	width:993px;
+    }
+    .test1{
+    	border:1px solid #DCDCDC;
+    	width:994px;
+    }
+    .test1 td{
+    	border:1px solid #DCDCDC;
+    	height:35px;
+    	padding:5px;
+    }
+    </style>
+</head>
+
+<body>
+    <div id="header">
+        <p>Blockchain Detail</p>
+    </div>
+    <div class="text-body">
+        <div id="details">
+            <div class="tableBox">
+                <table class="table table-bordered">
+                    <tbody>
+                        <tr>
+                            <td class="column">Creation Name</td>
+                            <td class="tdContent">Chinese Bamboo Painting</td>
+                        </tr>
+                        <tr>
+                            <td class="column">Creation Author</td>
+                            <td class="tdContent">Mr. Li Qing</td>
+                        </tr>
+                        <tr>
+                            <td class="column">Copyright Owner</td>
+                            <td class="tdContent">BUPT Library</td>
+                        </tr>
+                        <tr>
+                            <td class="column">Creation Time</td>
+                            <td class="tdContent">2008-08-08</td>
+                        </tr>
+                    </tbody>
+                </table> 
+                <table class="table table-bordered">
+                    <caption>Summary</caption>
+                    <tbody style="border:1px solid #333">
+                        <tr>
+                            <td class="column">Number</td>
+                            <td class="tdContent">36</td>
+                        </tr>
+                        <tr>
+                            <td class="column">Current_hash</td>
+                            <td class="tdContent">2c8c4881b34e13bce7d4ed4869f890fbbd5754ab7f02b4c229cfc0495419ca77</td>
+                        </tr>
+                        <tr>
+                            <td class="column">Previous_Hash</td>
+                            <td class="tdContent">3dc7555ead146a41302865873e941767e7126064da73e343e282654ace5103ff</td>
+                        </tr>
+                        <tr>
+                            <td class="column">Data_hash</td>
+                            <td class="tdContent">469f57098a297611c450f2d138fe7a4851cd383825c10fef9e0b3bbd9ae23587</td>
+                        </tr>
+                        <tr>
+                            <td class="column">Number Of Transactions</td>
+                            <td class="tdContent">1</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            <div class="imgBox">
+                 <img id="picture1" src="../images/digital/zz.jpg">
+                <img id="picture2" src="../images/digital/yq.jpg">
+            </div>
+        </div>
+    </div>
+    <div class="text-body  rowTwo">
+        <!--         <table class="table table-bordered">
+            <caption> summary/The tiananmen square </caption>
+            <tbody>
+                <tr>
+                    <td class="column">number </td>
+                    <td>24</td>
+                </tr>
+                <tr>
+                    <td class="column">current_hash </td>
+                    <td>f7fba90e01cece1dc197ad80143e06f8e268986b8ec69defac80150ccf675ac9</td>
+                </tr>
+                <tr>
+                    <td class="column">previous_Hash </td>
+                    <td>86905a809b3dcda28fa49bbb0fd242a24d58f410f79da1048cb84e416724dcc4</td>
+                </tr>
+                <tr>
+                    <td class="column">data_hash </td>
+                    <td>9ff4f0bab6707e61914a8306440b8f34f557d162eb1983a9a711746488533901</td>
+                </tr>
+                <tr>
+                    <td class="column">number Of transactions </td>
+                    <td>1</td>
+                </tr>
+            </tbody>
+        </table> -->
+        <table class="test1">
+            <caption>Transactions </caption>
+            <tbody>
+                <tr>
+                    <td class="column2">tx_id </td>
+                    <td class="tdContent2">1c50bc264ee12588711e8a77c3ea8ebf81651079a260ebebc95d9c7de12984d7/td>
+                </tr>
+                <tr>
+                    <td class="column2">Proposal_hash</td>
+                    <td class="tdContent2">e5b66ffa37aaa8c8ea9ffd21cd042051b943a28d518b9cecf121a601cd9b380b</td>
+                </tr>
+                <tr>
+                    <td class="column2">Payload</td>
+                    <td class="tdContent2">{"application":"","birthday":"2008-08-08","datahash":"da98e1c5dfee073245b2d15afa22e96485fdd657e304486c06d86f4a713abab1","files":"upload/1533984942206.jpg","id":49,"identify":"Mr. Li Qing","phonenum":"BUPT Library","realname":"Chinese Bamboo Painting","status":"0","storagetime":"2018-08-11 18:55:42"}</td>
+                </tr>
+                <tr>
+                    <td class="column2"> Timestamp</td>
+                    <td class="tdContent2">Sat Aug 11 2018 18:55:42 GMT+0800 (CST)</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</body>
+
+</html>

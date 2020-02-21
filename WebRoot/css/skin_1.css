@@ -1,0 +1,59 @@
+#div_side_0,#div_side_1{
+	background: mediumpurple;
+}
+.layui-layout-admin header.layui-header {
+	/* background: rgb(30, 159, 255) */
+	/* background-color:#284895;*/
+	background-color: rgb(0, 40, 80);
+}
+
+.layui-bg-black, .layui-nav {
+	background-color: rgb(0, 40, 80);
+}
+
+.layui-nav-itemed .layui-nav-child {
+	background-color: rgb(0, 40, 80);
+}
+
+.layui-nav-itemed .layui-nav-child dd a {
+	padding-left: 20px;
+	background-color: rgb(0, 40, 80);
+}
+
+td {
+	word-wrap: break-word;
+}
+
+.layui-nav-tree .layui-nav-child dd.layui-this, .layui-nav-tree .layui-nav-child dd.layui-this a,
+	.layui-nav-tree .layui-this, .layui-nav-tree .layui-this>a,
+	.layui-nav-tree .layui-this>a:hover {
+	background-color: rgb(0, 30, 60) !important;
+	color: rgb(100, 220, 255);
+}
+
+.layui-header {
+	height: 75px;
+}
+
+.title-text {
+	height: 75px;
+	color: rgb(100, 220, 255);
+}
+
+.title-text .line {
+    border-bottom: 3px solid rgb(100, 220, 255);
+}
+.layui-nav .layui-nav-item a {
+    color: rgb(100, 220, 255);
+}
+.layui-nav-itemed>a, .layui-nav-tree .layui-nav-title a, .layui-nav-tree .layui-nav-title a:hover
+	{
+	color: rgb(100, 220, 255) !important;
+}
+
+.layui-nav-tree .layui-nav-child a {
+	color: rgb(100, 220, 255);
+}
+.layui-nav .layui-nav-mored, .layui-nav-itemed .layui-nav-more {
+    border-color: transparent transparent rgb(100, 220, 255);
+}
