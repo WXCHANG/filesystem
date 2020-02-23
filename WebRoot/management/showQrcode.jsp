@@ -217,35 +217,35 @@ td, caption {
 			<div class="col-xs-7">
 				<table class="table table-bordered">
 					<tr>
-						<td class="column">产品名称</td>
+						<td class="column">文件名称</td>
 						<td>${origin.name }</td>
 					</tr>
 					<tr>
-						<td class="column">葡萄品种</td>
+						<td class="column">作者名称</td>
 						<td>${origin.area }</td>
 					</tr>
 					<tr>
-						<td class="column">产品年份</td>
+						<td class="column">文件大小</td>
 						<td>${origin.identifier }</td>
 					</tr>
 					<tr>
-						<td class="column">产品规格</td>
+						<td class="column">文件来源</td>
 						<td>${origin.quality }</td>
 					</tr>
 					<tr>
-						<td class="column">产品酒精度</td>
+						<td class="column">业务信息</td>
 						<td>${origin.value7 }</td>
 					</tr>
 					<tr>
-						<td class="column">产品生产地</td>
+						<td class="column">业务信息</td>
 						<td>${origin.value8 }</td>
 					</tr>
 					<tr>
-						<td class="column">产品经销商</td>
+						<td class="column">业务信息</td>
 						<td>${origin.value9 }</td>
 					</tr>
 					<tr>
-						<td class="column">产品描述</td>
+						<td class="column">业务信息</td>
 						<td>${origin.examine }</td>
 					</tr>
 				</table>
@@ -314,13 +314,13 @@ td, caption {
 							<td class="column">交易时间戳 [ timestamp ]</td>
 							<td>${transaction.timestamp }</td>
 						</tr>
-						<tr>
-							<td class="column">
-								<button type="button" class="btn btn-primary"
-									data-toggle="modal" data-target="#myModal">交易payload解密</button>
-							</td>
-							<td><span id="decryptData"></span></td>
-						</tr>
+						<%--<tr>--%>
+							<%--<td class="column">--%>
+								<%--<button type="button" class="btn btn-primary"--%>
+									<%--data-toggle="modal" data-target="#myModal">交易payload解密</button>--%>
+							<%--</td>--%>
+							<%--<td><span id="decryptData"></span></td>--%>
+						<%--</tr>--%>
 					</c:forEach>
 				</c:if>
 			</table>

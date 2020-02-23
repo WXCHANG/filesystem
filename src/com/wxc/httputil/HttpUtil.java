@@ -43,17 +43,6 @@ import org.slf4j.LoggerFactory;
 
 import com.alibaba.fastjson.JSON;
 
-/**
- * ClassName:HttpUtil <br/>
- * Function: http请求工具�? <br/>
- * Reason: TODO ADD REASON. <br/>
- * Date: 2016�?1�?21�? 下午6:52:13 <br/>
- * 
- * @author bxy-jing
- * @version
- * @since JDK 1.6
- * @see
- */
 public class HttpUtil {
 
 	private static final Logger logger = LoggerFactory.getLogger(HttpUtil.class);
@@ -62,9 +51,9 @@ public class HttpUtil {
 
 	/**
 	 * 
-	 * get:使用httpClient发�?�get请求. <br/>
+	 * get:使用httpClient发送get请求. <br/>
 	 *
-	 * @author bxy-jing
+	 * @author
 	 * @param url
 	 * @return Response
 	 * @since JDK 1.6
@@ -75,7 +64,7 @@ public class HttpUtil {
 
 	/**
 	 * 
-	 * get:使用httpClient发�?�get请求. <br/>
+	 * get:使用httpClient发get请求. <br/>
 	 *
 	 * @author bxy-jing
 	 * @param url

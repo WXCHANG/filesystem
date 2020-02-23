@@ -189,13 +189,13 @@ layui.config({
 						<td class="column">交易时间戳 [ timestamp ]</td>
 						<td>${transaction.timestamp }</td>
 					</tr>
-					<tr>
-						<td class="column">
-							<button type="button" class="btn btn-primary" data-toggle="modal"
-								data-target="#myModal">交易payload解密</button>
-						</td>
-						<td><span id="decryptData"></span></td>
-					</tr>
+					<%--<tr>--%>
+						<%--<td class="column">--%>
+							<%--<button type="button" class="btn btn-primary" data-toggle="modal"--%>
+								<%--data-target="#myModal">交易payload解密</button>--%>
+						<%--</td>--%>
+						<%--<td><span id="decryptData"></span></td>--%>
+					<%--</tr>--%>
 				</c:forEach>
 			</c:if>
 		</table>

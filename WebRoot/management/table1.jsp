@@ -98,28 +98,28 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 				<div class="modal-body">
 					<form id="edit-userForm" class="form-horizontal">
 						<div class="form-group">
-							<label for="name" class="layui-form-label col-sm-3 control-label">业务字段1</label> 
+							<label for="name" class="layui-form-label col-sm-3 control-label">文件名称</label>
 							<div class="col-sm-8">
 								<input type="text"
 									class="form-control" id="value1" name="value1" />
 							</div>
 						</div>
 						<div class="form-group">
-							<label for="area" class="layui-form-label col-sm-3 control-label">业务字段2</label> 
+							<label for="area" class="layui-form-label col-sm-3 control-label">作者名称</label>
 							<div class="col-sm-8">
 								<input type="text"
 									class="form-control" id="value2" name="value2" />
 							</div>
 						</div>
 						<div class="form-group">
-							<label for="identifier" class="layui-form-label col-sm-3 control-label">业务字段3</label> 
+							<label for="identifier" class="layui-form-label col-sm-3 control-label">文件大小</label>
 							<div class="col-sm-8">
 								<input type="text"
 									class="form-control" id="value3" name="value3" />
 							</div>
 						</div>
 						<div class="form-group">
-							<label class="layui-form-label col-sm-3 control-label">业务字段4</label>
+							<label class="layui-form-label col-sm-3 control-label">文件来源</label>
 							<div class="col-sm-8">
 								<input type="text"
 									class="form-control" id="value4" name="value4" />
@@ -171,10 +171,10 @@ layui.config({
 //             {type:'checkbox', fixed: 'left'}
             {title: '序号', templet: '#indexTpl', width: 60, fixed: 'left', type: 'numbers'}
          // ,{field: 'id', title: 'ID',  sort: true,  width: 80, fixed: 'left'}
-             ,{field: 'name', title: '业务字段1',}
-            ,{field: 'area', title: '业务字段2'}
-            ,{field: 'identifier', title: '业务字段3'} 
-            ,{field: 'quality', title: '业务字段4'}
+             ,{field: 'name', title: '文件名称',}
+            ,{field: 'area', title: '作者名称'}
+            ,{field: 'identifier', title: '文件大小'}
+            ,{field: 'quality', title: '文件来源'}
             ,{field: 'storagetime', title: '录入时间'}
 //             ,{field: 'examine', title: '产品审核', width: 150}
             ,{field: 'hash', title: '数据Hash值（系统自动生成）'}

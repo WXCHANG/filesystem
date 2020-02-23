@@ -1139,7 +1139,7 @@ public class OriginController {
     
     /**
      * 通过用户tocken来限制视频播放
-     * @param id
+     * @param
      * @return
      */
     @RequestMapping(value="/selectVideoToken.do")

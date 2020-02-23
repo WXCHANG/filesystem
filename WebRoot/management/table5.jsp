@@ -101,11 +101,11 @@ layui.use('table', function(){
         ,cols: [[ //表头
                   {title: '序号', templet: '#indexTpl', width: 60, type: 'numbers'}
                   // {field: 'id', title: 'ID', width:80, sort: true,}
-                  ,{field: 'name', title: '业务字段1'}
-                  ,{field: 'area', title: '业务字段2'}
-                  ,{field: 'identifier', title: '业务字段3'}
-                  ,{field: 'hash', title: '数据Hash'} 
-                  ,{field: 'txId', title: '交易ID'}
+                  ,{field: 'name', width:180,title: '文件名称'}
+                  ,{field: 'area', width:180,title: '作者名称'}
+                  ,{field: 'identifier', width:180,title: '文件大小'}
+                  ,{field: 'quality', width:180,title: '文件来源'}
+                  ,{field: 'hash', width:350,title: '数据Hash'}
                   
               ]]
         ,id: 'testReload'

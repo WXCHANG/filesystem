@@ -47,7 +47,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 
     <div class="ant-card-head">
         <div class="ant-card-head-wrapper">
-            <div class="ant-card-head-title">已存入数据列表</div>
+            <div class="ant-card-head-title">已存数据列表</div>
         </div>
     </div>
     <div class="text-body">
@@ -74,10 +74,10 @@ layui.use('table', function(){
         ,cols: [[ //表头
             {title: '序号', templet: '#indexTpl', width: 80, fixed: 'left', type: 'numbers'}
             // {field: 'id', title: 'ID', width:80, sort: true,}
-            ,{field: 'name', title: '业务字段1',}
-            ,{field: 'area', title: '业务字段2'}
-            ,{field: 'identifier', title: '业务字段3'} 
-            ,{field: 'quality', title: '业务字段4'}
+            ,{field: 'name', title: '文件名称',}
+            ,{field: 'area', title: '作者名称'}
+            ,{field: 'identifier', title: '文件大小'}
+            ,{field: 'quality', title: '文件来源'}
             ,{field: 'storagetime', title: '提交时间', width:180} 
             ,{field: 'savetime', title: '存入区块时间'}
             ,{field: 'status', title: '存入状态'}
