@@ -280,9 +280,9 @@ public class OriginController {
 					}else{
 						fileType = "errorFile";
 					}
-					String path = System.getProperty("catalina.home")+File.separator+"webapps"+File.separator+fileType;
-					/*String path = request.getSession().getServletContext()
-							.getRealPath("upload");*/
+//					String path = System.getProperty("catalina.home")+File.separator+"webapps"+File.separator+fileType;
+					String path = request.getSession().getServletContext()
+							.getRealPath("upload");
 					String fileName = value5.getOriginalFilename();
 					String newName = System.currentTimeMillis()
 							+ fileName.substring(fileName.lastIndexOf("."));
@@ -296,7 +296,8 @@ public class OriginController {
 					} catch (Exception e) {
 						e.printStackTrace();
 					}
-					origin.setFile("/"+fileType+"/" + newName);
+//					origin.setFile("/"+fileType+"/" + newName);
+					origin.setFile("/upload/" + newName);
 
 				}
 				origin.setType(type);
@@ -389,7 +390,7 @@ public class OriginController {
 		map.put("jsonData", jsonData);
 		map.put("key", "CPSec"+id);
 		
-		String responseStr = NewApiUtil.createBlockDataEx(map);
+		String responseStr = NewApiUtil.createBlockDataEx(map); //调用API数据上链操作
 		JSONObject jsonObject = JSONObject.fromObject(responseStr);
 		String codeStr = jsonObject.getString("Code");
 		if (codeStr.equals("success")) {
